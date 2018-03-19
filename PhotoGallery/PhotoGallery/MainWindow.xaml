@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoGallery"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PhotoGallery" Height="450" Width="800" Name="PhotoGalleryWindow">
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -14,11 +15,11 @@
 
 		<Menu Grid.Row="0">
 			<MenuItem Header="File">
-				<MenuItem Header="New"/>
-				<MenuItem Header="Open..."/>
-				<MenuItem Header="Save"/>
-				<MenuItem Header="Save as..."/>
-				<MenuItem Header="Exit"/>
+				<MenuItem Header="New" Click="MenuNew_Click"/>
+				<MenuItem Header="Open..." Click="MenuOpen_Click"/>
+				<MenuItem Header="Save" Click="MenuSave_Click"/>
+				<MenuItem Header="Save as..." Click="MenuSaveAs_Click"/>
+				<MenuItem Header="Exit" Click="MenuExit_Click"/>
 			</MenuItem>
 			<MenuItem Header="Edit">
 				<MenuItem Header="Add file..."/>
@@ -32,9 +33,26 @@
 			<MenuItem Header="About"/>
 		</Menu>
 
-		<WrapPanel Grid.Row="1">
-			
-		</WrapPanel>
+		<ScrollViewer Grid.Row="1" Visibility="Hidden">
+			<ListBox ItemsSource="{Binding Path=pictures}">
+				
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel/>
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Button>
+							<Image Style="{StaticResource imgStyle}" Source="{Binding Path=source}"/>
+							
+						</Button>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+
+			</ListBox>
+		</ScrollViewer>
 
 	</Grid>
 </Window>
