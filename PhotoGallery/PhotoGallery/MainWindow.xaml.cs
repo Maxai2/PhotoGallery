@@ -17,7 +17,7 @@ namespace PhotoGallery
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<ImageSource> pictures { get; set; }
+        public ObservableCollection<Picture> pictures { get; set; }
 
         System.Windows.Forms.SaveFileDialog saveFileDialog;
         System.Windows.Forms.OpenFileDialog openFileDialog;
@@ -27,9 +27,9 @@ namespace PhotoGallery
         {
             InitializeComponent();
 
-            this.DataContext = this;
+            DataContext = this;
 
-            pictures = new ObservableCollection<ImageSource>();
+            pictures = new ObservableCollection<Picture>();
 
             saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             saveFileDialog.Filter = "Picture file (.jpg, .png)|*.jpg; *.png|*.png|*.png|*.jpg|*.jpg";
@@ -43,10 +43,23 @@ namespace PhotoGallery
         //--------------------------------------------
         void Save()
         {
-            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
+            StringBuilder path = new StringBuilder();
 
+            folderDlg.ShowNewFolderButton = true;
+
+            if (folderDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                path.Append(folderDlg.SelectedPath);
+
+                foreach (var item in pictures)
+                {
+                    item.picSource.ToString();
+
+                    File.Create(path.ToString());
+                }
             }
+
+            folderDlg.ShowNewFolderButton = false;
         }
         //--------------------------------------------
         private void MenuNew_Click(object sender, RoutedEventArgs e)
@@ -74,14 +87,13 @@ namespace PhotoGallery
                 {
                     foreach (FileInfo pic in directory.GetFiles())
                     {
-                        ImageSource source = new BitmapImage(new Uri(pic.FullName));
+                        Picture picture = new Picture
+                        {
+                            picSource = new BitmapImage(new Uri(pic.FullName))
+                        };
 
-                        
-
-                        pictures.Add(source);
+                        pictures.Add(picture);
                     }
-
-
                 }
             }
         }

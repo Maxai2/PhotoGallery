@@ -33,26 +33,23 @@
 			<MenuItem Header="About"/>
 		</Menu>
 
-		<ScrollViewer Grid.Row="1" Visibility="Hidden">
-			<ListBox ItemsSource="{Binding Path=pictures}">
-				
-				<ListBox.ItemsPanel>
-					<ItemsPanelTemplate>
-						<WrapPanel/>
-					</ItemsPanelTemplate>
-				</ListBox.ItemsPanel>
+		<ListBox Grid.Row="1" ItemsSource="{Binding Path=pictures}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
-				<ListBox.ItemTemplate>
-					<DataTemplate>
-						<Button>
-							<Image Style="{StaticResource imgStyle}" Source="{Binding Path=source}"/>
-							
-						</Button>
-					</DataTemplate>
-				</ListBox.ItemTemplate>
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<WrapPanel/>
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
 
-			</ListBox>
-		</ScrollViewer>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Button>
+						<Image Source="{Binding Path=picSource}" Style="{StaticResource imgStyle}"/>
+					</Button>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+
+		</ListBox>
 
 	</Grid>
 </Window>
