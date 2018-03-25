@@ -49,13 +49,13 @@ namespace PhotoGallery
 
             if (folderDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                path.Clear();
+
                 path.Append(folderDlg.SelectedPath);
 
                 foreach (var item in pictures)
                 {
-                    item.picSource.ToString();
-
-                    File.Create(path.ToString());
+                    File.Copy(item.picSource.ToString(), path.ToString() + item.picSource.ToString().Substring(item.picSource.ToString().LastIndexOf('/')), true);
                 }
             }
 
@@ -78,7 +78,7 @@ namespace PhotoGallery
                 pictures.Clear();
             }
 
-            
+
             if (folderDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 DirectoryInfo directory = new DirectoryInfo(folderDlg.SelectedPath);
@@ -118,8 +118,34 @@ namespace PhotoGallery
         {
             if (pictures.Count != 0)
             {
-                Save();
+                var ans = System.Windows.MessageBox.Show("Are you sure you want to exit?", "", MessageBoxButton.YesNoCancel);
+
+                switch (ans)
+                {
+                    case MessageBoxResult.Yes:
+                        Save();
+                        return;
+                    case MessageBoxResult.No:
+                        break;
+                    case MessageBoxResult.None:
+                    case MessageBoxResult.Cancel:
+                        return;
+                }
+
+                PhotoGalleryWindow.Close();
             }
+            else
+                PhotoGalleryWindow.Close();
+
+        }
+        //--------------------------------------------
+        private void Button_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var img = e.OriginalSource as Image;
+
+            var pWindow = new Preview { Owner = this };
+            pWindow.PreviewImage.Source = img.Source;
+            pWindow.Show();
         }
         //--------------------------------------------
     }

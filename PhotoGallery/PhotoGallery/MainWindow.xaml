@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoGallery"
         mc:Ignorable="d"
-        Title="PhotoGallery" Height="450" Width="800" Name="PhotoGalleryWindow">
+        Title="PhotoGallery" Height="450" Width="800" Name="PhotoGalleryWindow" WindowStartupLocation="CenterScreen">
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -43,7 +43,7 @@
 
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Button>
+					<Button Background="Transparent" BorderThickness="0" MouseDoubleClick="Button_MouseDoubleClick">
 						<Image Source="{Binding Path=picSource}" Style="{StaticResource imgStyle}"/>
 					</Button>
 				</DataTemplate>

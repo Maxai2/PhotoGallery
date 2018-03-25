@@ -1,0 +1,61 @@
+﻿<Window x:Class="PhotoGallery.Preview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhotoGallery"
+        mc:Ignorable="d"
+        Title="Preview" Height="350" Width="600" Name="PreviewWindow" WindowStartupLocation="CenterOwner">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="8*"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Image Grid.Row="0" Grid.Column="1" Name="PreviewImage"/>
+
+		<Grid Grid.Row="1" Grid.Column="1" ButtonBase.Click="Grid_Click">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+
+			<Button Style="{StaticResource btStyle}" Content="⏪">
+				<Button.OpacityMask>
+
+					<VisualBrush>
+						<VisualBrush.Visual>
+							<Border Style="{StaticResource brStyle}"/>
+						</VisualBrush.Visual>
+					</VisualBrush>
+				</Button.OpacityMask>
+			</Button>
+
+			<Border Grid.Column="1" Style="{StaticResource brStyle}">
+				<Button Name="PreviewPic" Content="⏪" Style="{StaticResource btStyle}"/>
+			</Border>
+
+			<Border Grid.Column="1" Style="{StaticResource brStyle}">
+				<Button Content="⏹" Name="Pause" Style="{StaticResource btStyle}"/>
+			</Border>
+
+			<Border Grid.Column="2" Style="{StaticResource brStyle}">
+				<Button Content="⏵" Name="Play" Style="{StaticResource btStyle}"/>
+			</Border>
+
+			<Border Grid.Column="3" Style="{StaticResource brStyle}">
+				<Button Content="⏩" Name="NextPic" Style="{StaticResource btStyle}"/>
+			</Border>
+
+		</Grid>
+
+	</Grid>
+</Window>
