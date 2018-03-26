@@ -28,15 +28,8 @@
 			</Grid.ColumnDefinitions>
 
 
-			<Button Style="{StaticResource btStyle}" Content="⏪">
-				<Button.OpacityMask>
-
-					<VisualBrush>
-						<VisualBrush.Visual>
-							<Border Style="{StaticResource brStyle}"/>
-						</VisualBrush.Visual>
-					</VisualBrush>
-				</Button.OpacityMask>
+			<Button Style="{StaticResource btStyle}" Content="⏪" OpacityMask="{StaticResource border}">
+		
 			</Button>
 
 			<Border Grid.Column="1" Style="{StaticResource brStyle}">
