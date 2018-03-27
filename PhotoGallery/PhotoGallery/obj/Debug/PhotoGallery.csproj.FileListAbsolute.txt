@@ -16,3 +16,21 @@ C:\Users\Mahm_iz81\Source\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug
 C:\Users\Mahm_iz81\Source\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.exe
 C:\Users\Mahm_iz81\Source\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.pdb
 C:\Users\Mahm_iz81\Source\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.csprojResolveAssemblyReference.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\bin\Debug\PhotoGallery.exe.config
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\bin\Debug\PhotoGallery.exe
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\bin\Debug\PhotoGallery.pdb
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.csprojResolveAssemblyReference.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\MainWindow.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\Preview.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\App.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery_MarkupCompile.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery_MarkupCompile.lref
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\App.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\MainWindow.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\Preview.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.g.resources
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.Properties.Resources.resources
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.csproj.GenerateResource.Cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.csproj.CoreCompileInputs.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.exe
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\PhotoGallery.pdb

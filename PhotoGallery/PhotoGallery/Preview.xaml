@@ -20,6 +20,7 @@
 		<Image Grid.Row="0" Grid.Column="1" Name="PreviewImage"/>
 
 		<Grid Grid.Row="1" Grid.Column="1" ButtonBase.Click="Grid_Click">
+			
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition/>
 				<ColumnDefinition/>
@@ -27,26 +28,13 @@
 				<ColumnDefinition/>
 			</Grid.ColumnDefinitions>
 
+			<Button Grid.Column="0" Content="⏪" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
 
-			<Button Style="{StaticResource btStyle}" Content="⏪" OpacityMask="{StaticResource border}">
-		
-			</Button>
+			<Button Grid.Column="1" Content="⏹" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
 
-			<Border Grid.Column="1" Style="{StaticResource brStyle}">
-				<Button Name="PreviewPic" Content="⏪" Style="{StaticResource btStyle}"/>
-			</Border>
+			<Button Grid.Column="2" Content="⏵" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
 
-			<Border Grid.Column="1" Style="{StaticResource brStyle}">
-				<Button Content="⏹" Name="Pause" Style="{StaticResource btStyle}"/>
-			</Border>
-
-			<Border Grid.Column="2" Style="{StaticResource brStyle}">
-				<Button Content="⏵" Name="Play" Style="{StaticResource btStyle}"/>
-			</Border>
-
-			<Border Grid.Column="3" Style="{StaticResource brStyle}">
-				<Button Content="⏩" Name="NextPic" Style="{StaticResource btStyle}"/>
-			</Border>
+			<Button Grid.Column="3" Content="⏩" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
 
 		</Grid>
 

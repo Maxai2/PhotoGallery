@@ -13,19 +13,19 @@
 
 		<Style TargetType="Button" x:Key="btStyle">
 			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderThickness" Value="1"/>
 		</Style>
 
 		<Style TargetType="Border" x:Key="brStyle">
-			<Setter Property="CornerRadius" Value="60"/>
+			<Setter Property="CornerRadius" Value="25"/>
 			<Setter Property="BorderThickness" Value="1"/>
 			<Setter Property="BorderBrush" Value="Black"/>
-			<Setter Property="Margin" Value="5"/>
 		</Style>
+		
 		<VisualBrush x:Key="border">
 			<VisualBrush.Visual>
 				<Border Style="{StaticResource brStyle}" />
 			</VisualBrush.Visual>
 		</VisualBrush>
+		
 	</Application.Resources>
 </Application>
