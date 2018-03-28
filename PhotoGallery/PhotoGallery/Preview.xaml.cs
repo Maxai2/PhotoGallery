@@ -22,21 +22,17 @@ namespace PhotoGallery
     {
         ObservableCollection<ImageSource> tempCol;
 
-        public Preview(ObservableCollection<ImageSource> collection)
+        public Preview()
         {
             InitializeComponent();
 
-            tempCol = collection;
         }
 
         private void Grid_Click(object sender, RoutedEventArgs e)
         {
             var controll = sender as Button;
 
-            switch (controll == )
-            {
-                default:
-            }
+            
         }
     }
 }

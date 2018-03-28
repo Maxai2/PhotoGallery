@@ -28,7 +28,9 @@
 				<ColumnDefinition/>
 			</Grid.ColumnDefinitions>
 
-			<Button Grid.Column="0" Content="⏪" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
+			<Border Grid.Column="0" Style="{StaticResource brStyle}" CornerRadius="50">				
+			<Button Content="⏪" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
+			</Border>
 
 			<Button Grid.Column="1" Content="⏹" Style="{StaticResource btStyle}" OpacityMask="{StaticResource border}"/>
 
