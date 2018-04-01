@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+//-------------------------------------------------------
 namespace PhotoGallery
 {
     /// <summary>
@@ -22,17 +22,42 @@ namespace PhotoGallery
     {
         ObservableCollection<ImageSource> tempCol;
 
-        public Preview()
+        int curIndex;
+        //-------------------------------------------------------
+        public Preview(ObservableCollection<ImageSource> sources, int cur)
         {
             InitializeComponent();
 
-        }
+            tempCol = sources;
+            curIndex = cur;
 
-        private void Grid_Click(object sender, RoutedEventArgs e)
+            iPreviewImage.Source = tempCol[curIndex];
+        }
+        //-------------------------------------------------------
+        private void ButtonPreview_Click(object sender, RoutedEventArgs e)
         {
-            var controll = sender as Button;
+            if (curIndex >= 0)
+            {
+                curIndex--;
 
-            
+                iPreviewImage.Source = tempCol[curIndex];
+            }
         }
+        //-------------------------------------------------------
+        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //-------------------------------------------------------
+        private void ButtonPlay_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //-------------------------------------------------------
+        private void ButtonNext_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //-------------------------------------------------------
     }
 }

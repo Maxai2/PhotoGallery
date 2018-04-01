@@ -33,7 +33,7 @@
 			<MenuItem Header="_About"/>
 		</Menu>
 
-		<ListBox Grid.Row="1" ItemsSource="{Binding Path=pictures}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<ListBox Name="lbPictures" Grid.Row="1" ItemsSource="{Binding Path=pictures}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<ListBox.ItemsPanel>
 				<ItemsPanelTemplate>
 					<WrapPanel/>
@@ -43,7 +43,7 @@
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 
-					<Button Background="Transparent" BorderThickness="0" MouseDoubleClick="Button_MouseDoubleClick" Tag="{Binding Path=picSource}">
+					<Button Background="Transparent" BorderThickness="0" MouseDoubleClick="Button_MouseDoubleClick">
 						<Button.Template>
 							<ControlTemplate>
 								<Image Source="{Binding}" Style="{StaticResource imgStyle}"/>
@@ -53,8 +53,9 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-
-		
 		
 	</Grid>
 </Window>
+
+
+<!--Tag="{Binding Path=picSource}"-->

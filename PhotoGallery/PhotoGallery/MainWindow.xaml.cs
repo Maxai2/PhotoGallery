@@ -159,8 +159,8 @@ namespace PhotoGallery
         {
             var img = sender as Button;
 
-            var pWindow = new Preview { Owner = this };
-            pWindow.PreviewImage.Source = img.Tag as ImageSource;
+            var pWindow = new Preview(pictures, lbPictures.SelectedIndex) { Owner = this };
+            //pWindow.PreviewImage.Source = img.Tag as ImageSource;
             pWindow.ShowInTaskbar = false;
             pWindow.WindowStyle = WindowStyle.ToolWindow;
             pWindow.ShowDialog();
