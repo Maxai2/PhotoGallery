@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PhotoGallery"
         mc:Ignorable="d"
         Title="PhotoGallery" Height="450" Width="800" Name="PhotoGalleryWindow" WindowStartupLocation="CenterScreen">
+	
 	<Window.Resources>
 		<Style TargetType="ListBoxItem">
 			<Style.Triggers>
@@ -15,6 +16,7 @@
 			</Style.Triggers>
 		</Style>
 	</Window.Resources>
+	
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -41,13 +43,12 @@
 			<MenuItem Header="_About"/>
 		</Menu>
 
-		<ListBox Name="lbPictures" Grid.Row="1" ItemsSource="{Binding Path=pictures}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<ListBox Name="lbPictures" Grid.Row="1" ItemsSource="{Binding Path=pictures}" AllowDrop="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Drop="lbPictures_Drop" PreviewDrop="lbPictures_PreviewDrop">
 			<ListBox.ItemsPanel>
 				<ItemsPanelTemplate>
 					<WrapPanel/>
 				</ItemsPanelTemplate>
 			</ListBox.ItemsPanel>
-
 
 			<ListBox.ItemTemplate>
 				
@@ -57,7 +58,7 @@
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Border>
-									<Image Source="{Binding}" Style="{StaticResource imgStyle}" MouseDown="Image_MouseDown"/>
+									<Image Source="{Binding}" Style="{StaticResource imgStyle}"/>
 
 								</Border>
 							</ControlTemplate>

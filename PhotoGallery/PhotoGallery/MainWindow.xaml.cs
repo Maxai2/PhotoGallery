@@ -19,6 +19,8 @@ namespace PhotoGallery
     {
         public ObservableCollection<ImageSource> pictures { get; set; }
 
+        string CurrentDir;
+
         System.Windows.Forms.SaveFileDialog saveFileDialog;
         System.Windows.Forms.OpenFileDialog openFileDialog;
         System.Windows.Forms.FolderBrowserDialog folderDlg;
@@ -73,6 +75,8 @@ namespace PhotoGallery
 
                         File.Copy(temp, Path.Combine(path.ToString(), Path.GetFileName(temp)), true);
                     }
+
+                    CurrentDir = path;
                 }
 
                 folderDlg.ShowNewFolderButton = false;
@@ -83,7 +87,11 @@ namespace PhotoGallery
         {
             if (pictures.Count != 0)
             {
-                Save(false);
+                if (CurrentDir != "")
+                    Save(false);
+                else
+                    Save(true);
+
                 pictures.Clear();
             }
         }
@@ -92,7 +100,11 @@ namespace PhotoGallery
         {
             if (pictures.Count != 0)
             {
-                Save(false);
+                if (CurrentDir != "")
+                    Save(false);
+                else
+                    Save(true);
+
                 pictures.Clear();
             }
 
@@ -119,8 +131,13 @@ namespace PhotoGallery
         {
             if (pictures.Count != 0)
             {
-                Save(true);
+                if (CurrentDir != "")
+                    Save(true);
+                else
+                    Save(false);
             }
+            else
+                MessageBox.Show("No Laptop to save!");
         }
         //--------------------------------------------
         private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
@@ -167,19 +184,56 @@ namespace PhotoGallery
             pWindow.ShowDialog();
         }
         //--------------------------------------------
+        void AddFile()
+        {
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Picture picture = new Picture
+                {
+                    picSource = new BitmapImage(new Uri(openFileDialog.FileName))
+                };
+
+                pictures.Add(new BitmapImage(new Uri(openFileDialog.FileName)));
+            }
+        }
+        //--------------------------------------------
         private void MenuAddFile_Click(object sender, RoutedEventArgs e)
         {
-
+            AddFile();
         }
         //--------------------------------------------
         private void MenuAddFolder_Click(object sender, RoutedEventArgs e)
         {
+            if (folderDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DirectoryInfo directory = new DirectoryInfo(folderDlg.SelectedPath);
 
+                if (directory.Exists)
+                {
+                    foreach (FileInfo pic in directory.GetFiles())
+                    {
+                        Picture picture = new Picture
+                        {
+                            picSource = new BitmapImage(new Uri(pic.FullName))
+                        };
+
+                        pictures.Add(new BitmapImage(new Uri(pic.FullName)));
+                    }
+                }
+            }
         }
-
-        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        //--------------------------------------------
+        private void lbPictures_Drop(object sender, DragEventArgs e)
         {
-            e.Handled = false;
+            Picture droppedPicture = e.Data.GetData(typeof(Picture)) as Picture;
+            Picture tergetPicture = ((ListBoxItem)(sender)).DataContext as Picture;
+
+            
+        }
+        //--------------------------------------------
+        private void lbPictures_PreviewDrop(object sender, DragEventArgs e)
+        {
+           
         }
         //--------------------------------------------
     }
