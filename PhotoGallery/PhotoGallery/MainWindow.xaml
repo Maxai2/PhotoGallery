@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:PhotoGallery"
         mc:Ignorable="d"
         Title="PhotoGallery" Height="450" Width="800" Name="PhotoGalleryWindow" WindowStartupLocation="CenterScreen">
-
+	<Window.Resources>
+		<Style TargetType="ListBoxItem">
+			<Style.Triggers>
+				<Trigger Property="IsKeyboardFocusWithin" Value="true">
+					<Setter Property="IsSelected" Value="true" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -14,18 +22,18 @@
 		</Grid.RowDefinitions>
 
 		<Menu Grid.Row="0">
-			<MenuItem Header="File">
+			<MenuItem Header="_File">
 				<MenuItem Header="_New" Click="MenuNew_Click"/>
 				<MenuItem Header="_Open..." Click="MenuOpen_Click"/>
 				<MenuItem Header="_Save" Click="MenuSave_Click"/>
 				<MenuItem Header="Save _as..." Click="MenuSaveAs_Click"/>
 				<MenuItem Header="_Exit" Click="MenuExit_Click"/>
 			</MenuItem>
-			<MenuItem Header="Edit">
-				<MenuItem Header="Add f_ile..."/>
-				<MenuItem Header="Add f_older..."/>
+			<MenuItem Header="_Edit">
+				<MenuItem Header="Add f_ile..." Click="MenuAddFile_Click"/>
+				<MenuItem Header="Add f_older..." Click="MenuAddFolder_Click"/>
 			</MenuItem>
-			<MenuItem Header="View">
+			<MenuItem Header="_View">
 				<MenuItem IsCheckable="True" Header="_Tiles"/>
 				<MenuItem IsCheckable="True" Header="_Small icons"/>
 				<MenuItem IsCheckable="True" Header="_Details"/>
@@ -40,20 +48,27 @@
 				</ItemsPanelTemplate>
 			</ListBox.ItemsPanel>
 
+
 			<ListBox.ItemTemplate>
+				
 				<DataTemplate>
 
 					<Button Background="Transparent" BorderThickness="0" MouseDoubleClick="Button_MouseDoubleClick">
 						<Button.Template>
-							<ControlTemplate>
-								<Image Source="{Binding}" Style="{StaticResource imgStyle}"/>
+							<ControlTemplate TargetType="Button">
+								<Border>
+									<Image Source="{Binding}" Style="{StaticResource imgStyle}" MouseDown="Image_MouseDown"/>
+
+								</Border>
 							</ControlTemplate>
 						</Button.Template>
 					</Button>
+
 				</DataTemplate>
 			</ListBox.ItemTemplate>
+
 		</ListBox>
-		
+
 	</Grid>
 </Window>
 

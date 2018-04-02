@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Debug\
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\obj\Release\
 PhotoGallery
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\PhotoGallery\App.xaml
 2-377604745
 
@@ -16,5 +16,5 @@ C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Repos\PhotoGallery\PhotoGallery\
 14-1175798665
 MainWindow.xaml;Preview.xaml;
 
-False
+True
 

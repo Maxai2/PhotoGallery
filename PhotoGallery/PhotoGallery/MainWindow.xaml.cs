@@ -157,13 +157,29 @@ namespace PhotoGallery
         //--------------------------------------------
         private void Button_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            var img = sender as Button;
+            //var img = sender as Button;
 
             var pWindow = new Preview(pictures, lbPictures.SelectedIndex) { Owner = this };
+
             //pWindow.PreviewImage.Source = img.Tag as ImageSource;
             pWindow.ShowInTaskbar = false;
             pWindow.WindowStyle = WindowStyle.ToolWindow;
             pWindow.ShowDialog();
+        }
+        //--------------------------------------------
+        private void MenuAddFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //--------------------------------------------
+        private void MenuAddFolder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            e.Handled = false;
         }
         //--------------------------------------------
     }
