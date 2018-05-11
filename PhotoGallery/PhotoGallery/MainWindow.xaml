@@ -36,9 +36,9 @@
 				<MenuItem Header="Add f_older..." Click="MenuAddFolder_Click"/>
 			</MenuItem>
 			<MenuItem Header="_View">
-				<MenuItem IsCheckable="True" Header="_Tiles"/>
-				<MenuItem IsCheckable="True" Header="_Small icons"/>
-				<MenuItem IsCheckable="True" Header="_Details"/>
+				<MenuItem Name="MITiles" IsCheckable="True" Header="_Tiles"/>
+				<MenuItem Name="MISmallIcon" IsCheckable="True" Header="_Small icons"/>
+				<MenuItem Name="MIDetails" IsCheckable="True" Header="_Details"/>
 			</MenuItem>
 			<MenuItem Header="_About"/>
 		</Menu>

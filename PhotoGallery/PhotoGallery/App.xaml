@@ -21,12 +21,12 @@
 			<Setter Property="BorderThickness" Value="1"/>
 			<Setter Property="BorderBrush" Value="Black"/>
 		</Style>
-		
+
 		<VisualBrush x:Key="border">
 			<VisualBrush.Visual>
 				<Border Style="{StaticResource brStyle}" />
 			</VisualBrush.Visual>
 		</VisualBrush>
-		
+
 	</Application.Resources>
 </Application>

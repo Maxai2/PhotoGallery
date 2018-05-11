@@ -42,6 +42,8 @@ namespace PhotoGallery
             folderDlg = new System.Windows.Forms.FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = false;
 
+            MITiles.IsChecked = true;
+
 
             var lb = new ListBox();
             lb.ItemTemplate = this.Resources["smallIconsTemplate"] as DataTemplate;
